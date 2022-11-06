@@ -85,19 +85,19 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(PessoaObj pessoa){
-            //nome.setText(pessoa.getNome().substring(0,1).toUpperCase()+pessoa.getNome().substring(1));
-            //sobrenome.setText(pessoa.getSobrenome().substring(0,1).toUpperCase()+pessoa.getSobrenome().substring(1));
-            //email.setText(pessoa.getEmail());
+            nome.setText(pessoa.getNome().substring(0,1).toUpperCase()+pessoa.getNome().substring(1));
+            sobrenome.setText(pessoa.getSobrenome().substring(0,1).toUpperCase()+pessoa.getSobrenome().substring(1));
+            email.setText(pessoa.getEmail());
             //endereco.setText(pessoa.getEndereco());
-            //cidade.setText(pessoa.getCidade().substring(0,1).toUpperCase()+pessoa.getCidade().substring(1));
-            //estado.setText(pessoa.getEstado());
+            cidade.setText(pessoa.getCidade().substring(0,1).toUpperCase()+pessoa.getCidade().substring(1));
+            estado.setText(pessoa.getEstado().substring(0,1).toUpperCase()+pessoa.getEstado().substring(1));
             username.setText(pessoa.getUsername());
             senha.setText(pessoa.getSenha());
             //nascimento.setText(pessoa.getNascimento());
-            //telefone.setText(pessoa.getTelefone());
+            telefone.setText(pessoa.getTelefone());
             //latitude.setText(pessoa.getLatitude());
             //longitude.setText(pessoa.getLongitude());
-            //foto.setImageBitmap(pessoa.getFoto());
+            foto.setImageBitmap(pessoa.getFoto());
             load.dismiss();
         }
 

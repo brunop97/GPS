@@ -39,11 +39,10 @@ public class Utils {
 
             JSONObject obj = objArray.getJSONObject("user");
             //Atribui os objetos que estão nas camadas mais altas
-            //pessoa.setEmail(obj.getString("email"));
+            pessoa.setEmail(obj.getString("email"));
             pessoa.setUsername(obj.getString("username"));
             pessoa.setSenha(obj.getString("password"));
-
-            /*pessoa.setTelefone(obj.getString("phone"));
+            pessoa.setTelefone(obj.getString("phone"));
             data = new Date(obj.getLong("dob")*1000);
             pessoa.setNascimento(sdf.format(data));
 
@@ -61,7 +60,7 @@ public class Utils {
             //Imagem eh um objeto
             JSONObject foto = obj.getJSONObject("picture");
             pessoa.setFoto(baixarImagem(foto.getString("large")));
-*/
+
             return pessoa;
         }catch (JSONException e){
             e.printStackTrace();

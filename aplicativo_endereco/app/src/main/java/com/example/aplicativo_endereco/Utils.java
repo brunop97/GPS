@@ -11,8 +11,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Utils {
     public PessoaObj getInformacao(String end){
@@ -33,34 +31,34 @@ public class Utils {
             JSONObject jsonObj = new JSONObject(json);
             JSONArray array = jsonObj.getJSONArray("results");
 
-            //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            //Date data;
-
             JSONObject objArray = array.getJSONObject(0);
 
-            JSONObject obj = objArray.getJSONObject("login");;
-            pessoa.setUsername(obj.getString("username"));
-            pessoa.setSenha(obj.getString("password"));
-
-            //Nome da pessoa é um objeto, instancia um novo JSONObject
             JSONObject nome = objArray.getJSONObject("name");
+            JSONObject endereco = objArray.getJSONObject("location");
+            JSONObject login = objArray.getJSONObject("login");;
+            JSONObject foto = objArray.getJSONObject("picture");
+
+
             pessoa.setNome(nome.getString("first"));
             pessoa.setSobrenome(nome.getString("last"));
+            pessoa.setEmail(objArray.getString("email"));
+            pessoa.setCidade(endereco.getString("city"));
+            pessoa.setEstado(endereco.getString("state"));
+            pessoa.setUsername(login.getString("username"));
+            pessoa.setSenha(login.getString("password"));
+            pessoa.setTelefone(objArray.getString("phone"));
+            pessoa.setFoto(baixarImagem(foto.getString("large")));
 
             //Endereco tambem é um Objeto
-            JSONObject endereco = obj.getJSONObject("location");
-            pessoa.setEndereco(endereco.getString("street"));
-            pessoa.setEstado(endereco.getString("state"));
-            pessoa.setCidade(endereco.getString("city"));
-
+            //JSONObject rua = endereco.getJSONObject("street");
+            //pessoa.setEndereco(rua.getString("name"));
+/*
             //Coordenadas
             JSONObject coordenadas = obj.getJSONObject("coordinates");
             pessoa.setLatitude(coordenadas.getString("latitude"));
             pessoa.setLongitude(coordenadas.getString("longitude"));
-
+*/
             //Imagem eh um objeto
-            JSONObject foto = obj.getJSONObject("picture");
-            pessoa.setFoto(baixarImagem(foto.getString("large")));
 
             return pessoa;
         }catch (JSONException e){
