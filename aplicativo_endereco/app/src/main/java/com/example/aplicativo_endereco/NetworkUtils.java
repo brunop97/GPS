@@ -1,5 +1,7 @@
 package com.example.aplicativo_endereco;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class NetworkUtils {
+public class NetworkUtils{
 
     //Responsavel por carregar o Objeto JSON
     public static String getJSONFromAPI(String url){

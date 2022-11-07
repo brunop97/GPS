@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.aplicativo_endereco">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
@@ -13,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Aplicativo_endereco"
+        android:theme="@style/Theme.Teste"
         tools:targetApi="31">
 
         <!--
@@ -29,20 +26,12 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyA9ak03lQak7vY2Zqn3fzYPRzoLIt5Rjkg" />
+            android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".Utils"
-            android:exported="false" />
-        <activity
-            android:name=".PessoaObj"
-            android:exported="false" />
-        <activity
-            android:name=".NetworkUtils"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".MapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

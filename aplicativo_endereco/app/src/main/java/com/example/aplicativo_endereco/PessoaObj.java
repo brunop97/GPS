@@ -2,7 +2,9 @@ package com.example.aplicativo_endereco;
 
 import android.graphics.Bitmap;
 
-public class PessoaObj {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class PessoaObj{
     private String nome;
     private String sobrenome;
     private String email;
